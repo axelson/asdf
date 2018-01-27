@@ -11,6 +11,8 @@ source "$(dirname "$(dirname "$0")")/lib/commands/update.sh"
 source "$(dirname "$(dirname "$0")")/lib/commands/install.sh"
 # shellcheck source=lib/commands/uninstall.sh
 source "$(dirname "$(dirname "$0")")/lib/commands/uninstall.sh"
+# shellcheck source=lib/commands/reinstall.sh
+source "$(dirname "$(dirname "$0")")/lib/commands/reinstall.sh"
 # shellcheck source=lib/commands/current.sh
 source "$(dirname "$(dirname "$0")")/lib/commands/current.sh"
 # shellcheck source=lib/commands/where.sh
@@ -61,6 +63,9 @@ case $1 in
 
 "uninstall")
     uninstall_command $callback_args;;
+
+"reinstall")
+    reinstall_command $callback_args;;
 
 "current")
     current_command $callback_args;;
